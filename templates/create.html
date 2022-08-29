@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
     <title>Users CR</title>
 </head>
 <body>
-    
-    <h1>Add a New User</h1>
-    <p><a href="/process">Home</a></p>
-    <form >
-        <label for="fname">First Name:</label>
-        <input type="text" name="first_name">
-        <label for="lname">Last Name:</label>
-        <input type="text" name="last_name">
-        <label for="occ" >Email:</label>
-        <input type="text" name="email">
-        <input action='/create_user' method="post" type="submit" value="Create">
+    <div class="top">
+        <h1>Add a New User</h1>
+        <a href="/display">Home</a>
+    </div>
+    <form class='form' action='/create_user' method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" placeholder="Enter first name here" >
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" placeholder="Enter last name here">
+        <label for="email" >Email:</label>
+        <input type="text" name="email" placeholder="Enter email here">
+        <input action='/display' method="post" type="submit" value="Create" id="create">
+        {# action='/create_user' method="post" #}
     </form>
-
 </body>
 </html>
